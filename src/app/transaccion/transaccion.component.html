@@ -1,30 +1,34 @@
-<mat-card>
-  <mat-card-title>Dirección de la cuenta de usuario</mat-card-title>
-  <mat-card-content>
-    {{ address }}
-  </mat-card-content>
-</mat-card>
-
-<mat-card>
-  <mat-card-title>Saldo de cuenta del usuario</mat-card-title>
-  <mat-card-content>
-    {{ balance }} ETH
-  </mat-card-content>
-</mat-card>
-
-<mat-card>
-  <mat-card-title>Transaccion p2p</mat-card-title>
-  <mat-card-content>
-    <form [formGroup]="transactionForm" (ngSubmit)="sendTransaction()">
-      <mat-card-title>Dirección de destino</mat-card-title>
-      <mat-form-field>
-        <input matInput formControlName="toAddress">
-      </mat-form-field>
-      <mat-card-title>Cantidad (ETH)</mat-card-title>
-      <mat-form-field>
-        <input matInput formControlName="amount">
-      </mat-form-field>
-      <button mat-raised-button color="primary" type="submit">Enviar transaccion</button>
-    </form>
-  </mat-card-content>
-</mat-card>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white">
+          <h2 class="text-center"><i class="fas fa-exchange-alt"></i> Transacción P2P</h2>
+        </div>
+        <div class="card-body">
+          <!-- Información de la cuenta del usuario -->
+          <div class="mb-4">
+            <h4><i class="fas fa-user-circle"></i> Dirección de la cuenta de usuario</h4>
+            <p class="text-muted">{{ address }}</p>
+          </div>
+          <div class="mb-4">
+            <h4><i class="fas fa-wallet"></i> Saldo de cuenta del usuario</h4>
+            <p class="text-muted">{{ balance }} ETH</p>
+          </div>
+          <!-- Formulario de transacción -->
+          <form [formGroup]="transactionForm" (ngSubmit)="sendTransaction()">
+            <div class="form-group">
+              <label for="toAddress"><i class="fas fa-arrow-right"></i> Dirección de destino</label>
+              <input type="text" id="toAddress" class="form-control" formControlName="toAddress" placeholder="Ingrese la dirección de destino">
+            </div>
+            <div class="form-group">
+              <label for="amount"><i class="fas fa-coins"></i> Cantidad (ETH)</label>
+              <input type="number" id="amount" class="form-control" formControlName="amount" placeholder="Ingrese la cantidad">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-paper-plane"></i> Enviar transacción</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
