@@ -1,0 +1,30 @@
+<mat-card>
+  <mat-card-title>Dirección de la cuenta de usuario</mat-card-title>
+  <mat-card-content>
+    {{ address }}
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Saldo de cuenta del usuario</mat-card-title>
+  <mat-card-content>
+    {{ balance }} ETH
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Transaccion p2p</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="transactionForm" (ngSubmit)="sendTransaction()">
+      <mat-card-title>Dirección de destino</mat-card-title>
+      <mat-form-field>
+        <input matInput formControlName="toAddress">
+      </mat-form-field>
+      <mat-card-title>Cantidad (ETH)</mat-card-title>
+      <mat-form-field>
+        <input matInput formControlName="amount">
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Enviar transaccion</button>
+    </form>
+  </mat-card-content>
+</mat-card>
