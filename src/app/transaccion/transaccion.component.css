@@ -1,0 +1,39 @@
+body {
+   background: #f4f4f9;
+ }
+ .card {
+   border-radius: 15px;
+ }
+ .card-header {
+   border-top-left-radius: 15px;
+   border-top-right-radius: 15px;
+   padding: 10px 20px;
+ }
+ .card-body {
+   border-bottom-left-radius: 15px;
+   border-bottom-right-radius: 15px;
+   padding: 20px;
+ }
+ .header-blockchain {
+   background: linear-gradient(90deg, #3c3b6e, #6c63ff);
+   color: white;
+ }
+ .btn-primary {
+   background: #6c63ff;
+   border: none;
+ }
+ .btn-primary:hover {
+   background: #5a54d1;
+ }
+ .form-control {
+   border-radius: 10px;
+ }
+ .mb-4 {
+   margin-bottom: 1.5rem !important;
+ }
+ .mt-5, .my-5 {
+   margin-top: 0 !important;
+ }
+ .mt-4, .my-4 {
+   margin-top: 1.5rem !important;
+ }

@@ -8,10 +8,14 @@ import { AppComponent } from './app.component';
 import { TransaccionComponent } from './transaccion/transaccion.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MenuComponent } from './menu/menu.component';
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
-    TransaccionComponent
+    TransaccionComponent,
+    MenuComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
