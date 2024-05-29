@@ -10,17 +10,23 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
+import { AboutComponent } from './about/about.component';
+import { InicioComponent } from './inicio/inicio.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     TransaccionComponent,
     MenuComponent,
-    FooterComponent
+    FooterComponent,
+    AboutComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule, // Añade AppRoutingModule a la lista de imports
+    AppRoutingModule, // Añade AppRoutingModule a la lista de importssa
     ReactiveFormsModule,
     MatFormFieldModule,
     MatCardModule
