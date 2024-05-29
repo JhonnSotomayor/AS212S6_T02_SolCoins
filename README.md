@@ -4,3 +4,9 @@ Para clonar la rama `frontend` del repositorio `AS212S6_T02_SolCoins`, puedes us
 
 ```bash
 git clone -b frontend https://github.com/JhonnSotomayor/AS212S6_T02_SolCoins
+```
+
+Comando para actualizar y descartar los cambios locales (usar cuando ya se tenia descargado el repo)
+```bash
+git reset --hard
+git pull
