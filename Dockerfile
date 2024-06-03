@@ -1,6 +1,7 @@
 # Usar nginx como base
 FROM nginx:alpine
-RUN npm build
+
+RUN npm run build
 # Copiar la carpeta de construcción al directorio correcto para nginx
 COPY dist/sol-coins/browser /usr/share/nginx/html
 
