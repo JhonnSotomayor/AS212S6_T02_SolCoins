@@ -5,17 +5,33 @@ on:
       - frontend
 
 jobs:
-  #SONARCLOUD
-  sonarcloud:
+  build:
     name: DockerHub
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./frontend
+      
+      - name: Build Angular project
+        run: npm run build
+        working-directory: ./frontend
+
       #DOCKER HUB
       - name: Log in to Docker Hub
         run: echo ${{ secrets.DOCKER_TOKEN }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
   
       - name: Build Docker image
-        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/solcoin:latest .
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/solcoin:latest ./frontend
   
       - name: Push Docker image to Docker Hub
         run: docker push ${{ secrets.DOCKER_USERNAME }}/solcoin:latest
+
