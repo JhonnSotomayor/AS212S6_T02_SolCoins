@@ -20,7 +20,7 @@ Ejecuta `ng test` para ejecutar las pruebas unitarias a través de [Karma](https
 
 ## 🔍 Ejecución de pruebas de extremo a extremo
 
-Ejecuta `ng e2e` para ejecutar las pruebas de extremo a extremo a través de una plataforma de tu elección. Para usar este comando, primero necesitas agregar un paquete que implemente capacidades de pruebas de extremo a extremo.
+Ejecuta `ng e2e` para ejecutar las pruebas de extremo a extremo a través de una plataforma de tu elección. Para usar este comando, primero necesitas agregar un paquete que implemente capacidades de pruebas de extremo a extremo..
 
 ## 📚 Ayuda adicional
 
