@@ -9,9 +9,19 @@
 
 </head>
 <body style="height: 100vh; margin: 0; display: flex; align-items: center; justify-content: center;">
+
+  
+
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-6">
+
+        <!-- Botón para iniciar sesión con MetaMask -->
+            <div class="text-center animated btn-meta mb-4">
+              <button class="btn btn-primary" (click)="connectWallet()">
+                <i class="fas fa-sign-in-alt"></i> Iniciar sesión con MetaMask
+              </button>
+            </div>
         <!-- Card para la información del usuario -->
         <div class="card mb-4 shadow-lg">
           <div class="card-header header-blockchain text-center">

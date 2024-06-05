@@ -116,7 +116,10 @@ export class BlockchainService {
 
     const amountWei = this.web3.utils.toWei(amount.toString(), 'ether');
 
-    return this.contract.methods.transferir(toAddress, amountWei).send({ from: fromAddress, value: amountWei });
-  }
-  
+    await this.contract.methods.transferir(toAddress, amountWei).send({ from: fromAddress, value: amountWei });
+
+  // Limpiar los campos después de enviar la transacción
+  return { toAddress: '', amount: 0 };
+    }
+
 }
