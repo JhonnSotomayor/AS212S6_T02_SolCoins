@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef  } from '@angular/core';
 import { BlockchainService } from '../blockchain.service';
 import { FormGroup, FormControl } from '@angular/forms';
 
@@ -21,13 +21,14 @@ export class TransaccionComponent implements OnInit {
   isConnecting: boolean = false; // Añade esta línea
   web3Initialized: boolean = false;
   
-  constructor(private blockchainService: BlockchainService) { }
+  constructor(private blockchainService: BlockchainService, private cd: ChangeDetectorRef) { }
 
   async ngOnInit() {
     this.address = await this.blockchainService.getAddress();
     this.balance = await this.blockchainService.getBalance();
     console.log('Dirección en el componente:', this.address);
     console.log('Saldo en el componente:', this.balance);
+     this.listenForNetworkChanges();
   }
 
   async listenForNetworkChanges() {
@@ -35,6 +36,7 @@ export class TransaccionComponent implements OnInit {
       window.ethereum.on('chainChanged', async () => {
         // Actualizar el saldo cuando se cambia de red
         this.balance = await this.blockchainService.getBalance();
+        this.cd.detectChanges();
       });
     }
   }

@@ -72,7 +72,14 @@ export class BlockchainService {
     }
   }
 
-
+  listenToChainChanged() {
+  window.ethereum.on('chainChanged', async () => {
+    // Aquí puedes actualizar el saldo y la dirección
+    const address = await this.getAddress();
+    const balance = await this.getBalance();
+    return { address, balance };
+  });
+}
 
 
 
