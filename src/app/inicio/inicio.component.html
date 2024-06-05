@@ -1,11 +1,15 @@
-<div class="slider-container">
-  <div class="slider-wrapper">
-    <button class="prev-slide">❮</button>
-    <div class="slider">
-      <img src="assets/images/baseSepolia.png" alt="Imagen 1" width="1500px" height="600px !important;">>
-      <img src="assets/images/redSepolia.png" alt="Imagen 2" width="1500px" height="600px !important;">>
-      <img src="assets/images/monedaETH.png" alt="Imagen 3" width="1500px" height="600px !important;">>
+<div id="Carousel" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item" *ngFor="let image of carouselImages; let i = index" [ngClass]="{'active': i === 0}">
+      <img class="d-block w-100" [src]="image.src" [alt]="image.alt">
     </div>
-    <button class="next-slide">❯</button>
   </div>
+  <a class="carousel-control-prev" href="#Carousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only"></span>
+  </a>
+  <a class="carousel-control-next" href="#Carousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only"></span>
+  </a>
 </div>
