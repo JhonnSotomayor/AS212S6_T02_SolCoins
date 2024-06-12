@@ -1,0 +1,73 @@
+/* Custom CSS */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+h1, h2 {
+    color: #007bff;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(23, 23, 23, 0.889);
+    max-width: 1400px; /* Incrementamos el ancho máximo el contenedor */
+    background-color: rgba(247, 244, 244, 0.305); /* Color de fondo bajo */
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.lead {
+    font-size: 1.25em;
+    line-height: 1.6;
+}
+
+img {
+    margin-left: 10px;
+    vertical-align: middle;
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 767.98px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.75em;
+    }
+
+    .lead {
+        font-size: 1.1em;
+    }
+}
