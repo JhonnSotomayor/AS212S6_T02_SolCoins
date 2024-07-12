@@ -67,7 +67,12 @@ export class AppComponent implements OnInit {
   async sendTransaction() {
     const toAddress = this.transactionForm?.get('toAddress')?.value;
     const amount = this.transactionForm?.get('amount')?.value;
-  
+    
+    if (this.transactionForm.value.toAddress === '') {
+      // Muestra una notificación al usuario
+      alert('Por favor seleccione una entidad');
+      return; // Detiene la ejecución del método aquí
+    }
     if (toAddress && amount) {
       try {
         const { toAddress: newToAddress, amount: newAmount } = await this.blockchainService.sendTransaction(toAddress, amount);

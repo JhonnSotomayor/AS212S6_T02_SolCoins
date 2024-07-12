@@ -141,8 +141,14 @@
           <div class="card-body">
             <form [formGroup]="transactionForm" (ngSubmit)="sendTransaction()">
               <div class="form-group">
-                <label for="toAddress"><i class="fas fa-arrow-right"></i> Dirección de destino</label>
-                <input type="text" id="toAddress" class="form-control" formControlName="toAddress" placeholder="Ingrese la dirección de destino">
+                <label for="toAddress"><i class="fas fa-arrow-right"></i> Entidad de destino</label>
+                <select id="toAddress" class="form-control" formControlName="toAddress">
+                  <option value="" selected>Seleccionar entidad</option>
+                  <option value="0xEB279Dd6a21e4df3C14a69f3f7327B2Cb500e3d2">Sunat</option>
+                  <option value="0xEB279Dd6a21e4df3C14a69f3f7327B2Cb500e3d2">Reniec</option>
+                  <option value="0xEB279Dd6a21e4df3C14a69f3f7327B2Cb500e3d2">Essalud</option>
+                  <option value="0xEB279Dd6a21e4df3C14a69f3f7327B2Cb500e3d2">MINEDU</option>
+                </select>
               </div>
               <div class="form-group mt-4">
                 <label for="amount"><i class="fas fa-coins"></i> Cantidad (ETH)</label>
